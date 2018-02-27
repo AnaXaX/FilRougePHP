@@ -4,9 +4,9 @@ require_once 'header.php';
 ?>       
     <div class="container MinOpacity">
       <div class="jumbotron <?php if(isset($_GET['reussi']))echo'animated bounce'; if(isset($_GET['error']))echo'animated shake'; ?>">
-        <h1>Bootstrap 3 Style Guide</h1>
-        <p>A quick preview of everything Bootstrap has to offer.</p>
-        <p><a class="btn btn-primary btn-large">Learn more</a></p>
+        <h1><b> BIENVENUE AU ZOO PARC </b></h1>
+        <p><i> Plongez au coeur du monde animal</i></p>
+        <p><a class="btn btn-primary btn-large">En savoir plus </a></p>
       </div>
       <div class="row">
         <div class="col-lg-6">
@@ -110,7 +110,8 @@ require_once 'header.php';
             <p class="text-danger"> <b><i> Le Vivarium </i></b> </p>
             <p class="text-info">  <i><b> Le Coin des Félins </b></i></p>
             <p class="text-success"> <i><b> Monkey Island </b></i> </p>
-            <p><small>This is text in a <code>small</code> wrapper. <abbr title="No Big Deal">NBD</abbr>, right?</small></p>
+           
+           
             <hr>
             <address>                <strong>Twitter, Inc.</strong><br>                795 Folsom Ave, Suite 600<br>                San Francisco, CA 94107<br>                <abbr title="Phone">P:</abbr> (123) 456-7890              </address><address class="col-6">                <strong>Full Name</strong><br>                <a href="mailto:#">first.last@example.com</a>              </address>
             <hr>
