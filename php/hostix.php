@@ -3,7 +3,7 @@
     $host = 'localhost' ;   
     $user = 'root' ;
     $bdd = 'zoopark' ;
-    $password  = '' ;
+    $password  = 'root' ;
     $mysqli = new mysqli($host, $user, $password, $bdd);
 	if (!isset($_SESSION)) {
       session_start();
