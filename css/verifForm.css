@@ -1,0 +1,8 @@
+#js_errors{
+	margin-bottom: 5px;
+	color: red;
+}
+input.error, select.error, textarea.error, label.error{
+	border-color: red;
+	background-color: #FFDBCF;
+}
