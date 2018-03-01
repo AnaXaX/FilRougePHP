@@ -127,7 +127,7 @@ include('php/hostix.php'); ?>
                                             </div>
                                         </div>
                                     </form>
-                                    <form id="register-form" action="php/submit.php" method="post" role="form" style="display: none;">
+                                    <form name ="register-form" id="register-form" action="php/submit.php" method="post" role="form" onsubmit="return verifConfirmMdp(),evt.preventDefault();" style="display: none;">
                                         <div class="form-group">
                                             <label for="email">Nom</label>
                                             <input type="text" name="name-register" id="nom" tabindex="1" class="form-control" placeholder="Nom" value="">
@@ -143,7 +143,7 @@ include('php/hostix.php'); ?>
                                             <input type="password" name="password-register" id="password-register" tabindex="2" class="form-control" placeholder="Mot de passe">
                                         </div>
                                         <div class="form-group">
-                                            <label for="confirm-password">Confirmez le mot de passe</label>
+                                            <label for="confirm-password" id="label-passConfirm" name=""label-passConfirm"">Confirmez le mot de passe</label>
                                             <input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirmer le mot de passe">
                                         </div>
                                         <div class="form-group">
