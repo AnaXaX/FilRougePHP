@@ -60,12 +60,14 @@ $(function () {
     });
 
     /*END CONNEXION & INSCRIPTION*/
-    $("#register-form").submit(function () {
+    $("#register-form").submit(function (e) {
         if (invalid) {
             return false;
         } else {
             return true;
         }
+        e.preventDefault();
+
     });
 
     $("#register-submit").click(function () {
