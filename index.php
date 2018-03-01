@@ -11,80 +11,61 @@ require_once 'header.php';
       <div class="row">
         <div class="col-lg-6">
           <div class="panel panel-default" id="headings">
-            <div class="panel-heading">Headings</div>
+            <div class="panel-heading">Actualités</div>
             <div class="panel-body">
-            <h1 class="page-header">Page Header <small>With Small Text</small></h1>
-            <h1>This is an h1 heading</h1>
-            <h2>This is an h2 heading</h2>
-            <h3>This is an h3 heading</h3>
-            <h4>This is an h4 heading</h4>
-            <h5>This is an h5 heading</h5>
-            <h6>This is an h6 heading</h6>
+            <h1 class="page-header"></h1>
+            <h2>La Plaine Africaine s'est refait une beauté !</h2>
+            <h3>Venez découvrir le nouveau spectacle aquatique !</h3>
+            <h3>Zoo Parc de demain : Votre avis compte </h3>
+            
             </div>
           </div>
           <div class="panel panel-default" id="tables">
-            <div class="panel-heading">Tables
+            <div class="panel-heading">LIVRE D'OR
             </div>
             <div class="panel-body">
             <table class="table table-hover">
               <thead>
                 <tr>
                   <th>#</th>
-                  <th>First Name</th>
-                  <th>Tables</th>
+                  <th>Prénom</th>
+                  <th>Commentaire </th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td>1</td>
                   <td>Michael</td>
-                  <td>Are formatted like this</td>
+                  <td>Super Zoo pour une journée en famille </td>
                 </tr>
                 <tr>
                   <td>2</td>
                   <td>Lucille</td>
-                  <td>Do you like them?</td>
+                  <td>Le spectacle est génial !</td>
                 </tr>
                 <tr class="success">
                   <td>3</td>
-                  <td>Success</td>
-                  <td></td>
+                  <td>Marion</td>
+                  <td> Une belle découverte que ce parc</td>
                 </tr>
                 <tr class="danger">
                   <td>4</td>
-                  <td>Danger</td>
-                  <td></td>
+                  <td>Hugo</td>
+                  <td> Monkey Island nous plonge vraiment hors du temps</td>
                 </tr>
                 <tr class="warning">
                   <td>5</td>
-                  <td>Warning</td>
-                  <td></td>
+                  <td>Pierre</td>
+                  <td>Super cadre pour notre sortie scolaire, les enfants étaient ravis</td>
                 </tr>
                 <tr class="active">
                   <td>6</td>
-                  <td>Active</td>
-                  <td></td>
+                  <td>Tanguy</td>
+                  <td> Je reviendrais</td>
                 </tr>
               </tbody>
             </table>
-            <table class="table table-striped table-bordered table-condensed">
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>First Name</th>
-                  <th>Tables</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Michael</td>
-                  <td>This one is bordered and condensed</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>Lucille</td>
-                  <td>Do you still like it?</td>
+           
                 </tr>
               </tbody>
             </table>
@@ -113,37 +94,37 @@ require_once 'header.php';
            
            
             <hr>
-            <address>                <strong>Twitter, Inc.</strong><br>                795 Folsom Ave, Suite 600<br>                San Francisco, CA 94107<br>                <abbr title="Phone">P:</abbr> (123) 456-7890              </address><address class="col-6">                <strong>Full Name</strong><br>                <a href="mailto:#">first.last@example.com</a>              </address>
+            <address>                <strong>Zoo Parc, Inc.</strong><br>               12 Boulevard Stalingrad<br>               69003 Lyon<br>                <abbr title="Phone">P:</abbr> +33 (0) 6 49 29 62 67             </address><address class="col-6">                <strong>Mail</strong><br>                <a href="mailto:#">contact@zooparc.com</a>              </address>
             <hr>
-            <blockquote>Here's what a blockquote looks like in Bootstrap. <small>Use <code>small</code> to identify the source.</small>
+            <blockquote>Comment Venir au Zoo Parc <small>Tous les chemins mènent au Zoo Parc</small>
             </blockquote>
             <hr>
             <div class="row">
               <div class="col-xs-6">
                 <ul>
-                  <li>Normal Unordered List</li>
-                  <li>Can Also Work
-                    <ul>
-                      <li>With Nested Children</li>
+                  <li>VOITURE</li>
+                  <li> Proche quartier Part-Dieu via Périphérique Nord, à côté de l'autoroute A6
+                
+                     
                     </ul>
                   </li>
-                  <li>Adds Bullets to Page</li>
+                  <li>TRAIN : Gare Part-Dieu Vivier Merle</li>
                 </ul>
               </div>
               <div class="col-xs-6">
                 <ol>
-                  <li>Normal Ordered List</li>
-                  <li>Can Also Work
+                  <li> TRANSPORT EN COMMUN</li>
+                  <li>Metro B : Gare Part-Dieu
                     <ol>
-                      <li>With Nested Children</li>
+                      <li>Bus C2 Arrêt Zoo Parc</li>
                     </ol>
                   </li>
-                  <li>Adds Bullets to Page</li>
+                  <li> Tram T1 Arrêt Le Tonkin</li>
                 </ol>
               </div>
             </div>
             <hr>
-            <pre>function preFormatting() {  // looks like this;  var something = somethingElse;  return true;}</pre>
+            <pre>Possibilité de reserver des taxis et navettes pour venir directement</pre>
             </div>
           </div>
         </div>
