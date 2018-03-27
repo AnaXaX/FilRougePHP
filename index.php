@@ -1,7 +1,6 @@
 <?php
 $page=1;
 require_once 'header.php';
-<<<<<<< HEAD
 ?>
     <div class="container ">
         <div class="jumbotron MinOpacity <?php if(isset($_GET['reussi']))echo'animated bounce'; if(isset($_GET['error']))echo'animated shake'; ?>">
@@ -86,7 +85,7 @@ require_once 'header.php';
 
                     </div>
                 </div>
-=======
+
 ?>       
     <div class="container MinOpacity">
       <div class="jumbotron <?php if(isset($_GET['reussi']))echo'animated bounce'; if(isset($_GET['error']))echo'animated shake'; ?>">
@@ -211,7 +210,6 @@ require_once 'header.php';
             </div>
             <hr>
             <pre>Possibilité de reserver des taxis et navettes pour venir directement</pre>
->>>>>>> d8182d8df6d8f94321175a99af6a6ec19efd621f
             </div>
         </div>
         <div class="row">

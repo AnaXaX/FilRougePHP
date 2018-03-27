@@ -25,8 +25,6 @@ $('body').vegas({
         {
             src: './img/1.jpg'
         }
-
-
   ]
 });
 /*CONNEXION */
@@ -37,7 +35,6 @@ $('#buttonConnexion').click(function () {
 $('#connexion').on('hidden.bs.modal', function (e) {
     $('.navbar').show();
     $('.navbar').addClass('animated fadeInUp');
-
 })
 
 /*INSCRIPTION*/
@@ -60,8 +57,7 @@ $(function () {
     });
 
     /*END CONNEXION & INSCRIPTION*/
-<<<<<<< HEAD
-=======
+
     $("#register-form").submit(function (e) {
         if (invalid) {
             return false;
@@ -75,16 +71,11 @@ $(function () {
     $("#register-submit").click(function () {
         if (valid)
             $("#form-id").submit();
-        
-       
     });
-
->>>>>>> d8182d8df6d8f94321175a99af6a6ec19efd621f
 
 });
 /*Modification traitement input date*/
 
     $("#datetimepicker input").datepicker({
-         format: "yyyy-mm-dd",
-        
+         format: "yyyy-mm-dd",       
 });
