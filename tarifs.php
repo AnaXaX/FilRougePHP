@@ -1,6 +1,6 @@
 <?php
 require_once 'header.php';
-require_once 'php/Helper.php';
+$page = 2;
 ?>
 
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">

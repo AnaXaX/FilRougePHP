@@ -1,5 +1,4 @@
 <?php
-$page=2;
 require_once 'header.php';
 require_once 'php/Helper.php';
 
@@ -54,7 +53,4 @@ require_once 'php/Helper.php';
 </div>
 <?php
 require_once 'footer.php';
-/*
-<?php if (!empty($clt['dateNaissanceClient'])){echo date('d-m-Y',strtotime($_POST['dateNaissanceClient']));}?>
-*/
 ?>

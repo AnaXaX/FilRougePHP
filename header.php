@@ -1,5 +1,4 @@
 <?php 
-
 ob_start();//session_start work
 include('php/hostix.php'); ?>
 <!DOCTYPE html>
@@ -49,9 +48,9 @@ include('php/hostix.php'); ?>
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
                     <ul class="nav navbar-nav">
                         <li <?php if(isset($page)){if($page==1) echo 'class="active"';}?>><a href="index.php">Accueil</a></li>
-                        <li class="Rubrique">
+                        <li class="Rubrique dropdown <?php if(isset($page)){if($page==2) echo 'active';}?>">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nos Activités <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
+                            <ul class="dropdown-menu" >
                                 <li><a href="#">Activités</a></li>
                                 <li><a href="tarifs.php">Tarifs</a></li>
                             </ul>
@@ -68,7 +67,7 @@ include('php/hostix.php'); ?>
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Bonjour ' . $_SESSION['nomClient'] . ' ' . $_SESSION['prenomClient'] . ' <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li ><a href="formModifInfoClient.php">Modifier mes données personnelles</a></li>
-                            <li><a href="#">Consulter mon panier</a></li>
+                            <li><a href="panier.php">Consulter mon panier</a></li>
                             <li><a href="php/connexion.php?stateCo=lhayat">Se déconnecter</a></li>
                         </ul>
                     </li>';}?>

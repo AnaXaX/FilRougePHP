@@ -23,7 +23,6 @@ if (isset($_POST['email-connexion'], $_POST['password-connexion'])) {
                 $_SESSION['id'] = $row["codeClient"];
                 $_SESSION['nomClient'] = $row["nomClient"];
                 $_SESSION['prenomClient'] = $row["prenomClient"];
-                //session_write_close();
             }
             if(isset($_SESSION['id']))
                 echo "<script>location='../index.php?reussi=1'</script>";
@@ -32,7 +31,7 @@ if (isset($_POST['email-connexion'], $_POST['password-connexion'])) {
             exit();
         }
     }
-}//ob_end_flush();
+}
 /*Fin Connexion*/
 
 /*Début modification*/
