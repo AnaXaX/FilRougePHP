@@ -60,6 +60,26 @@ $(function () {
     });
 
     /*END CONNEXION & INSCRIPTION*/
+<<<<<<< HEAD
+=======
+    $("#register-form").submit(function (e) {
+        if (invalid) {
+            return false;
+        } else {
+            return true;
+        }
+        e.preventDefault();
+
+    });
+
+    $("#register-submit").click(function () {
+        if (valid)
+            $("#form-id").submit();
+        
+       
+    });
+
+>>>>>>> d8182d8df6d8f94321175a99af6a6ec19efd621f
 
 });
 /*Modification traitement input date*/
