@@ -29,7 +29,7 @@ require_once 'php/Helper.php';
                     <br>
                     <div class="form-group">
                         <label for="inputAdresse">Adresse</label>
-                        <input type="text" class="form-control" id="adresse" placeholder="Adresse" name="adresseMod" value="<?php if (!empty($clt['AdresseClient'])){echo $clt['AdresseClient'];} ?>">
+                        <input type="text" class="form-control" id="adresse" placeholder="Adresse" name="adresseMod" value="<?php if (!empty($clt['adresseClient'])){echo $clt['adresseClient'];} ?>">
                     </div>
                     <div class="form-group">
                         <label for="inputVille">Ville</label>
