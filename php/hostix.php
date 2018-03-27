@@ -1,9 +1,9 @@
 <?php
     #Connexion shit
-    $host = 'localhost' ;   
-    $user = 'root' ;
-    $bdd = 'zoopark' ;
-    $password  = 'root' ;
+    $host = 'zoopark.fr' ;   
+    $user = 'u142208db1' ;
+    $bdd = 'u142208db1' ;
+    $password  = 'xperia33110' ;
     $mysqli = new mysqli($host, $user, $password, $bdd);
 	if (!isset($_SESSION)) {
       session_start();
