@@ -25,7 +25,7 @@ if (isset($_POST['email-connexion'], $_POST['password-connexion'])) {
                 $_SESSION['prenomClient'] = $row["prenomClient"];
                 //session_write_close();
             }
-            if(!empty($_SESSION['id']))
+            if(isset($_SESSION['id']))
                 echo "<script>location='../index.php?reussi=1'</script>";
             else
                 echo "<script>location='../index.php?error=0'</script>";
