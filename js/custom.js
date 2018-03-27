@@ -60,20 +60,11 @@ $(function () {
     });
 
     /*END CONNEXION & INSCRIPTION*/
-    $("#register-form").submit(function () {
-        if (invalid) {
-            return false;
-        } else {
-            return true;
-        }
-    });
 
-    $("#register-submit").click(function () {
-        if (valid)
-            $("#form-id").submit();
+});
+/*Modification traitement input date*/
+
+    $("#datetimepicker input").datepicker({
+         format: "yyyy-mm-dd",
         
-       
-    });
-
-
 });

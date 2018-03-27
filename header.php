@@ -21,6 +21,7 @@ include('php/hostix.php'); ?>
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/animate.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/bootstrap-datepicker3.css"/>
 
 
         <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
@@ -47,19 +48,17 @@ include('php/hostix.php'); ?>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
                     <ul class="nav navbar-nav">
-                        <li <?php if($page==1) echo 'class="active"'?>><a href="index.php">Accueil</a></li>
+                        <li <?php if(isset($page)){if($page==1) echo 'class="active"';}?>><a href="index.php">Accueil</a></li>
                         <li class="Rubrique">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nos Activités <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">Activités</a></li>
-                                <li><a href="#">Offres</a></li>
+                                <li><a href="tarifs.php">Tarifs</a></li>
                             </ul>
                         </li>
-                        <li><a href="#"><?php //if (isset($_SESSION)) {var_dump($_SESSION);}  ?>A propos de nous</a></li>
+                        <li><a href="nousContacter.php">Nous contacter</a></li>
                     </ul>
-
                     <ul id ="nom" class="nav navbar-nav navbar-right">
-
                         <li>
                             <?php
                             if (!isset($_SESSION['email'])) {
@@ -72,9 +71,7 @@ include('php/hostix.php'); ?>
                             <li><a href="#">Consulter mon panier</a></li>
                             <li><a href="php/connexion.php?stateCo=lhayat">Se déconnecter</a></li>
                         </ul>
-                    </li>';
-                            }
-                            ?>
+                    </li>';}?>
                         </li>
                     </ul>
                 </div>
@@ -86,14 +83,10 @@ include('php/hostix.php'); ?>
         <!-- Modal connexion -->
         <div class="modal fade" id="connexion" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
-
-
-
                 <div class="col-md-9 col-md-offset-2">
                     <div class="panel panel-login">
                         <div class="panel-heading">
                             <div class="row">
-
                                 <div class="col-xs-6">
                                     <a href="#" class="active" id="login-form-link">Login</a>
                                 </div>
@@ -101,14 +94,13 @@ include('php/hostix.php'); ?>
                                     <a href="#" id="register-form-link">Register</a>
                                 </div>
                             </div>
-                            <hr>
                         </div>
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-12">
                                     <form id="login-form" action="php/connexion.php?log=in" method="post" role="form" style="display: block;">
                                         <div class="form-group">
-                                            <label for="username">Email <?php echo realpath(dirname(__FILE__)); ?></label>
+                                            <label for="username">Email</label>
                                             <input type="text" name="email-connexion" id="email-connexion" tabindex="1" class="form-control" placeholder="Email" value="">
                                         </div>
                                         <div class="form-group">
@@ -127,7 +119,7 @@ include('php/hostix.php'); ?>
                                             </div>
                                         </div>
                                     </form>
-                                    <form name ="register-form" id="register-form" action="php/submit.php" method="post" role="form" onsubmit="return verifConfirmMdp(),evt.preventDefault();" style="display: none;">
+                                    <form name ="register-form" id="register-form" action="php/submit.php" method="post" role="form" style="display: none;">
                                         <div class="form-group">
                                             <label for="email">Nom</label>
                                             <input type="text" name="name-register" id="nom" tabindex="1" class="form-control" placeholder="Nom" value="">
@@ -158,10 +150,7 @@ include('php/hostix.php'); ?>
                             </div>
                         </div>
                     </div>
-
                 </div>
-
-
             </div>
         </div>
     </body>

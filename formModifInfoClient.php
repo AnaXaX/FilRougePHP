@@ -9,35 +9,35 @@ require_once 'php/Helper.php';
         <center>
         <h1><?php
             echo $clt['nomClient'].' '.$clt['prenomClient'] ?></h1>
-        <p><?php echo $clt['email'] ?></p>
+        <p><?php echo $_SESSION['email'] ?></p>
         </center>
     </div>
-    <div class="panel panel-default <?php if(isset($_GET['reussi']))echo'animated bounce'; if(isset($_GET['error']))echo'animated shake'; ?>" id="forms">
+    <div class="panel panel-default MinOpacity <?php if(isset($_GET['reussi']))echo'animated bounce'; if(isset($_GET['error']))echo'animated shake'; ?>" id="forms">
         <div class="panel-heading">Données personnelles
         </div>
         <div class="panel-body">
             <form action="php/connexion.php?modif=lhayat" method="post" role="form"> 
                 <fieldset>
                     <legend>Modifiez vous données personnelles</legend>
-                    <label for="exampleInputEmail">Date de naissance</label>
-                    <div class='input-group date' id='datetimepicker1'>
-                        <input type='text' class="form-control" placeholder="Date de naissance" name="dateDeNaissanceMod" value="<?php if (!empty($clt['dateNaissanceClient'])){echo $clt['dateNaissanceClient'];} ?>"/><!-- Change value by php code --> 
+                    <label for="inputDateDeNaissance">Date de naissance</label>
+                    <div class='input-group date' id='datetimepicker'>
+                        <input type='text' class="form-control" placeholder="AAAA/MM/JJ" id="DateDeNaissance" name="dateDeNaissanceMod" value="<?php if (!empty($clt['dateNaissanceClient'])){ echo $clt['dateNaissanceClient'];}?>" readonly><!-- Change value by php code -->
                         <span class="input-group-addon">
                             <span class="glyphicon glyphicon-calendar"></span>
                         </span>
                     </div>
                     <br>
                     <div class="form-group">
-                        <label for="exampleInputEmail">Adresse</label>
+                        <label for="inputAdresse">Adresse</label>
                         <input type="text" class="form-control" id="adresse" placeholder="Adresse" name="adresseMod" value="<?php if (!empty($clt['AdresseClient'])){echo $clt['AdresseClient'];} ?>">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail">Ville</label>
+                        <label for="inputVille">Ville</label>
                         <input type="text" class="form-control" id="ville" placeholder="Ville" name="villeMod" value="<?php if (!empty($clt['villeClient'])){echo $clt['villeClient'];} ?>">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail">Numéro de téléphone</label>
-                        <input type="number" class="form-control" id="telephone" placeholder="Numéro de téléphone" name="telMod" value="<?php if (!empty($clt['telClient'])){echo $clt['telClient'];} ?>">
+                        <label for="InputTel">Numéro de téléphone</label>
+                        <input type="text" class="form-control" id="telephone" placeholder="Numéro de téléphone" name="telMod" value="<?php if (!empty($clt['telClient'])){echo $clt['telClient'];} ?>">
                     </div>
                     <div class="checkbox">
                         <label>
@@ -53,6 +53,8 @@ require_once 'php/Helper.php';
     </div>
 </div>
 <?php
-require_once 'footer.php';/*
-<?php if (!empty($clt['dateNaissanceClient'])){echo date('d-m-Y',strtotime($_POST['dateNaissanceClient']));}?>*/
+require_once 'footer.php';
+/*
+<?php if (!empty($clt['dateNaissanceClient'])){echo date('d-m-Y',strtotime($_POST['dateNaissanceClient']));}?>
+*/
 ?>

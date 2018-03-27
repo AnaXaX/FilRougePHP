@@ -42,14 +42,18 @@ if (isset($_GET['modif'])){
         $news=0;
         if(isset($_POST['newsletterClient']))
             $news=1;
-       if ($mysqli->query("UPDATE Client SET `dateNaissanceClient`='".$_POST['dateDeNaissanceMod']."', `AdresseClient`='".$_POST['adresseMod']."', `villeClient`='".$_POST['villeMod']."', `telClient`=".$_POST['telMod'].", `newsletterClient`=".$news." WHERE codeClient=".$_SESSION['id'])==TRUE)
+        $dateDeNaissance=date('Y-m-d', strtotime($_POST['dateDeNaissanceMod']));
+       if ($mysqli->query("UPDATE Client SET `dateNaissanceClient`='".$dateDeNaissance."', `AdresseClient`='".$_POST['adresseMod']."', `villeClient`='".$_POST['villeMod']."', `telClient`='".$_POST['telMod']."', `newsletterClient`=".$news." WHERE codeClient=".$_SESSION['id'])==TRUE)
            echo "<script>location='../formModifInfoClient.php?reussi=1'</script>";
         else
-            echo "<script>location='../formModifInfoClient.php?error=0'</script>";    }
+            echo "<script>location='../formModifInfoClient.php?error=0'</script>";   
+    }
     exit();
   
 }
 
-/*    if ($mysqli->query("UPDATE client SET `dateNaissanceClient`='".$_POST['dateDeNaissanceMod']."', `AdresseClient`='".$_POST['adresseMod']."', `villeClient`='".$_POST['villeMod']."', `telClient`='".$_POST['telMod']."', `newsletterClient`=".$_POST['newsletterClient']." WHERE codeClient=".$_SESSION['id'])==TRUE)*/
+/* 
+if ($mysqli->query("UPDATE client SET `dateNaissanceClient`='".$_POST['dateDeNaissanceMod']."', `AdresseClient`='".$_POST['adresseMod']."', `villeClient`='".$_POST['villeMod']."', `telClient`='".$_POST['telMod']."', `newsletterClient`=".$_POST['newsletterClient']." WHERE codeClient=".$_SESSION['id'])==TRUE)
+*/
 /*Fin modification*/
 ?>

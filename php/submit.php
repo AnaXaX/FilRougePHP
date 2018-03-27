@@ -40,23 +40,6 @@ if (isset($_POST['name-register'], $_POST['pname-register'], $_POST['email-regis
                     }
                     echo "<script type='text/javascript'>window.top.location='../index.php?reussi=1';</script>";
                     exit;
-
-                    /* if ($result = $mysqli->query("SELECT emailClient,codeClient, motDePasseClient, nomClient, prenomClient  FROM client WHERE emailClient='" . $_POST['email-register'] . "' and motDePasseClient='" . sha1($_POST['password-register']) . "' ")) {
-                      $finfo = $result->fetch_fields();
-                      if ($result->num_rows == 1) {
-                      foreach ($finfo as $val) {
-                      $row = $result->fetch_array(MYSQLI_ASSOC);
-                      $_SESSION['email'] = $row["emailClient"];
-                      $_SESSION['id'] = $row["codeClient"];
-                      $_SESSION['nomClient'] = $row["nomClient"];
-                      $_SESSION['prenomClient'] = $row["prenomClient"];
-                      session_write_close();
-                      }
-                      $result->close();
-                      echo "<script type='text/javascript'>window.top.location='../index.php';</script>";
-                      exit;
-                      }
-                      } */
                 } else {
                     echo "<script type='text/javascript'>window.top.location='../index.php?error=0';</script>";
                     exit;
