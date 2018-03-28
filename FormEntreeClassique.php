@@ -42,6 +42,7 @@ require_once 'php/Helper.php';
         <p><i> N'oublie pas, les entrées classiques à 10 euros, 5 euros pour les mineurs (-18 ans) </i></p>
         <p><a class="btn btn-primary btn-large" href="FormEntreeClassique.php">Achetez vos entrées !</a></p>
     </div>
+<<<<<<< HEAD
 </div>
 <div class="container">
     <div class="panel panel-default MinOpacity">
@@ -92,6 +93,57 @@ require_once 'php/Helper.php';
                                             <span class="glyphicon glyphicon-calendar"></span>
                                         </span>
                                     </div>
+=======
+    <div class="container">
+        <div class="panel panel-default MinOpacity">
+            <div class="panel-heading">Entrée Visiteur
+            </div>
+            <div class=" panel-body row clearfix">
+                <div class="col-md-12 column">
+                    <form action="php/connexion.php" method="post" role="form">
+                        <input type="hidden" name="nat" value="entreeVisiteur">
+                        <table class="table table-bordered table-hover" id="tab_logic">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">
+                                        #
+                                    </th>
+                                    <th class="text-center">
+                                        Nom
+                                    </th>
+                                    <th class="text-center">
+                                        Prénom
+                                    </th>
+                                    <th class="text-center">
+                                        Age
+                                    </th>
+                                    <th class="text-center">
+                                        Date de visite
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr id='addr0'>
+                                    <td>
+                                        1
+                                    </td>
+                                    <td>
+                                        <input type="text" name='nom[]' placeholder='Nom' class="form-control" />
+                                    </td>
+                                    <td>
+                                        <input type="text" name='prenom[]' placeholder='Prenom' class="form-control" />
+                                    </td>
+                                    <td>
+                                        <input type="number" name='age[]' placeholder='Age' class="form-control" />
+                                    </td>
+                                    <td>
+                                        <div class='input-group date' id="datetimepicker">
+                                            <input type='text' class="form-control" placeholder="Date de visite" class="DateEntree" name="DateEntree" readonly>
+                                            <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                            </span>
+                                        </div>
+>>>>>>> d062aecfcbd17a52152a0fd25ca29974ef221b1d
 
                                 </td>
                             </tr>

@@ -1,8 +1,9 @@
 <?php
 require_once('hostix.php');
-if (!isset($_SESSION)) {
+
+if (!isset($_SESSION))
     session_start();
-}
+
 /* selectionner les valeurs clients from table en stockant dans un tableau (variable $clt)*/
 
     $clt = array();
@@ -13,5 +14,6 @@ if (!isset($_SESSION)) {
             }
         }
     }
-  
+
+
 ?>

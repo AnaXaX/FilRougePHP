@@ -91,7 +91,7 @@ $(function () {
         });
          
       $('#tab_logic').append('<tr id="addr'+(i+1)+'"></tr>');
-      i++; 
+      i++;
       });
     
      $("#delete_row").click(function(){
@@ -100,7 +100,5 @@ $(function () {
          i--;
          }
      });
-    
-    
     });
 /*End Add Row*/
