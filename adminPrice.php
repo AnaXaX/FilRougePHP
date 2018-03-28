@@ -18,7 +18,7 @@ $prix = array();
             <div class=" panel-body row clearfix">
                 <div class="col-md-12 column">
                     <form action="php/connexion.php" method="post" role="form">
-                        <input type="hidden" name="prices" value="prices">
+                        <input type="hidden" name="priceEntree" value="priceEntree">
                         <table class="table table-bordered table-hover" id="tab_logic">
                             <thead>
                                 <tr>
@@ -64,5 +64,6 @@ $prix = array();
     </div>
 
     <?php
+//if (isset($_POST['priceEntree'])) {}
 require_once 'footer.php';
 ?>
