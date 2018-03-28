@@ -82,10 +82,10 @@ if (isset($_SESSION['id'])) {
                     $qry = "insert into RESERVATION (CODERESERVATION, CODECLIENT,ANNULABLE) values ($idReservation, $idClient ,0)";
                     if ($mysqli->query($qry) === FALSE) {
                         //Erreur lors de la création
-                        $reservationInseree = true;
                         echo "<script>location='../FormEntreeClassique.php?err=2'</script>";
                         exit;
-                    }
+                    }else
+                        $reservationInseree = true;        
                 }
             }
             if ($reservationInseree) {
@@ -97,11 +97,9 @@ if (isset($_SESSION['id'])) {
                         $idprix;
                         $prix;
                         $idEntreeVisiteur;
-                        foreach ($mysqli->query('Select * from prix where ACTIVITE=0') as $row) {
-                            if ($row["AGEMINPRIX"] < $age && $row["AGEMAXPRIX"] > $age) {
+                        foreach ($mysqli->query('SELECT * from PRIX where ACTIVITE=0 and '.$age[$i].' >= AGEMINPRIX and '.$age[$i].' < AGEMAXPRIX') as $row) {
                                 $idprix = $row["CODEPRIX"];
                                 $prix = $row["PRIX"];
-                            }
                         }
                         if (isset($idprix)) {
                             //Isertion de l'entree visiteur : recuperer le derniere cle primaire
@@ -114,30 +112,29 @@ if (isset($_SESSION['id'])) {
                                 $qry = $qry."'$idEntreeVisiteur',";
                                 $qry = $qry."'$idReservation',";
                                 $qry = $qry."'$idprix',";
-                                $nomPrenom=$nom[$i].$prenom[$i];
+                                $nomPrenom=$nom[$i]." ".$prenom[$i];
                                 $qry = $qry."'$nomPrenom',";
                                 $qry = $qry."'$age[$i]',";
                                 $qry = $qry."'$DateEntree[$i]'";
                                 $qry = $qry.")";
                                 $prixTotal=$prixTotal+$prix;
+                                if ($mysqli->query($qry) === FALSE) {
+                                    //Erreur lors de la création
+                                    echo "<script>location='../FormEntreeClassique.php?err=2'</script>";
+                                    exit;
+                                }
                                 
-                            } else {
-                                echo "<script>location='../FormEntreeClassique.php?err=2'</script>";
-                            }
-                            
-                        } else {
-                            echo "<script>location='../FormEntreeClassique.php?err=2'</script>";
-                        }
+                            } else 
+                                echo "<script>location='../FormEntreeClassique.php?err=3'</script>";
+                        } else 
+                            echo "<script>location='../FormEntreeClassique.php?err=4prix'</script>";                
                     }
                 }
                 echo "<script>location='../FormEntreeClassique.php?prix=$prixTotal'</script>";
             }
         }
-    } else {
-        echo 'test1';
-        echo "<script>location='../FormEntreeClassique.php?err=1'</script>";
-    }
-} else {
+    } else 
+        echo "<script>location='../FormEntreeClassique.php?err=1'</script>";  
+} else 
     echo "<script>location='../FormEntreeClassique.php?err=0'</script>";
-}
 ?>

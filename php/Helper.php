@@ -15,5 +15,13 @@ if (!isset($_SESSION))
         }
     }
 
-
+    $panier=array();
+    
+    if (isset($_SESSION['id'])) {
+        if ($mysqli) {
+            foreach ($mysqli->query("SELECT * FROM RESERVATION WHERE CODECLIENT=" . $_SESSION['id']." and TOTALPAYE is NULL") as $row) {
+                $panier[]=$row;
+            }
+        }
+    }
 ?>
