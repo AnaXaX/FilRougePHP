@@ -85,7 +85,7 @@ require_once 'php/Helper.php';
                                     </td>
                                     <td>
                                         <div class='input-group date' id="datetimepicker">
-                                            <input type='text' class="form-control" placeholder="Date de visite" class="DateEntree" name="DateEntree0" readonly>
+                                            <input type='text' class="form-control" placeholder="Date de visite" class="DateEntree" name="DateEntree" readonly>
                                             <span class="input-group-addon">
                                         <span class="glyphicon glyphicon-calendar"></span>
                                             </span>

@@ -84,14 +84,14 @@ $(function () {
 $(function () {
       var i=1;
      $("#add_row").click(function(){
-      $('#addr'+i).html("<td>"+ (i+1) +"</td><td><input name='nom[]' type='text' placeholder='Nom' class='form-control input-md' /></td><td><input name='prenom[]' type='text' placeholder='Prenom' class='form-control input-md'></td><td><input name='age[]' type='number' placeholder='Age' class='form-control input-md'></td><td><div class='input-group date' id='datetimepicker[]'><input type='text' class='form-control' placeholder='Date de visite' class='DateEntree' name='DateEntree[]' readonly><span class='input-group-addon'><span class='glyphicon glyphicon-calendar'></span></span></div></td>");
+      $('#addr'+i).html("<td>"+ (i+1) +"</td><td><input name='nom[]' type='text' placeholder='Nom' class='form-control input-md' /></td><td><input name='prenom[]' type='text' placeholder='Prenom' class='form-control input-md'></td><td><input name='age[]' type='number' placeholder='Age' class='form-control input-md'></td><td><div class='input-group date' id='datetimepicker"+i+"'><input type='text' class='form-control' placeholder='Date de visite' class='DateEntree' name='DateEntree[]' readonly><span class='input-group-addon'><span class='glyphicon glyphicon-calendar'></span></span></div></td>");
          
       $("#datetimepicker"+i+" input").datepicker({
          format: "yyyy-mm-dd",       
         });
          
       $('#tab_logic').append('<tr id="addr'+(i+1)+'"></tr>');
-      i++; 
+      i++;
       });
     
      $("#delete_row").click(function(){
@@ -100,7 +100,5 @@ $(function () {
          i--;
          }
      });
-    
-    
     });
 /*End Add Row*/
