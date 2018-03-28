@@ -103,8 +103,8 @@ require_once 'php/Helper.php';
 
                     <div class="container">
                         <div class="row">
-                            <center> <a id="add_row" class="btn btn-default btn-success ">Ajouter une entrée</a><a id='delete_row' style="margin-left:15px;" class="btn-warning btn btn-default">Supprimer une entrée</a>
-                                <br><br><input type="submit" class="btn btn-default btn-success " value="Ajouter au panier"></center>
+                            <center> <a id="add_row" class="btn btn-default btn-primary ">Ajouter une entrée</a><a id='delete_row' style="margin-left:15px;" class="btn-warning btn btn-default">Supprimer une entrée</a>
+                                <br><br><input type="submit" class="btn btn-default btn-success" value="Ajouter au panier"></center>
                         </div>
                     </div>
                 </form>
