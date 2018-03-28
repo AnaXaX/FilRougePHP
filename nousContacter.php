@@ -2,15 +2,11 @@
 require_once 'header.php';
 require_once 'php/Helper.php';
 ?>       
-<div class="container ">
+<div class="container MinOpacity">
 
-    <div class="panel panel-default <?php if (isset($_GET['reussi']))
-    echo'animated bounce';
-if (isset($_GET['error']))
-    echo'animated shake';
-?>" id="forms">
+    <div class="panel panel-default" id="forms">
 
-        <div class="panel-body">
+        <div class="panel-body ">
             <form>
                 <fieldset>
                     <legend>Formulaire de Contact </legend>

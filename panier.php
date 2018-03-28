@@ -39,7 +39,7 @@ require_once 'php/Helper.php';
                         <td class="text-center"><strong>Total 1.99</strong></td>
                     </tr>
                     <tr>
-                        <td><a href="#" class="btn btn-warning"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Continuer la visite</a></td>
+                        <td><a href="index.php" class="btn btn-warning"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Continuer la visite</a></td>
                         <td colspan="2" class="hidden-xs"></td>
                         <td class="hidden-xs text-center"><strong>Total $1.99</strong></td>
                         <td><a href="validationAchat.php" class="btn btn-success btn-block">Payement <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a></td>

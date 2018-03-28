@@ -51,5 +51,14 @@ if (isset($_GET['modif'])){
   
 }
 
+if (isset($_POST['nat'])) {
+    
+        $name_array = $_POST['nom'];
+    for ($i = 0; $i < count($name_array); $i++) {
+        $name = $name_array[$i];
+        echo "<br>".$name;
+    } 
+}
+
 
 ?>

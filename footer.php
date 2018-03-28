@@ -5,9 +5,9 @@
     <footer class="footer-bs">
         <div class="row">
             <div class="col-md-3 footer-brand animated fadeInLeft">
-                <h2>À bientôt sur ZooParc !</h2>
+                <h2>À bientôt sur Zoopark !</h2>
                 <p>
-                    <address> <strong>Zoo Parc, Inc.</strong><br>               12 Boulevard Stalingrad<br> 69003 Lyon<br>  <abbr title="Phone">P:</abbr> +33 (0) 6 49 29 62 67</address><address class="col-6"></address>
+                    <address> <strong>Zoo park, Inc.</strong><br>               12 Boulevard Stalingrad<br> 69003 Lyon<br>  <abbr title="Phone">P:</abbr> +33 (0) 6 49 29 62 67</address><address class="col-6"></address>
                 </p>
             </div>
             <div class="col-md-4 footer-nav animated fadeInUp">
@@ -50,7 +50,7 @@
                     <!-- /input-group -->
                 </p><br>
         <h4>Mail</h4>
-        <a href="mailto:#">contact@zooparc.com</a>
+        <a href="mailto:#">contact@zoopark.com</a>
             </div>
         </div>
     </footer>

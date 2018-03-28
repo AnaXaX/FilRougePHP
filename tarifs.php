@@ -9,6 +9,11 @@ $page = 2;
 <!------ Include the above in your HEAD tag ---------->
 
 <div class="container">
+    <div class="jumbotron MinOpacity">
+        <h2><b> Découvrez nos offres ! </b></h2>
+        <p><i> Entrées classiques à 10 euros, 5 euros pour les mineurs (-18 ans) </i></p>
+        <p><a class="btn btn-primary btn-large" href="FormEntreeClassique.php">Achetez vos entrées !</a></p>
+    </div>
 	<div class="row">
     			<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
 				
