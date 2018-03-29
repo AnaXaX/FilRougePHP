@@ -1,6 +1,7 @@
 <?php
 require_once 'header.php';
 $prix = array();
+$num_rows=0;
 ?>
     <div class="container ">
         <div class="jumbotron MinOpacity">
@@ -43,9 +44,9 @@ if (isset($_GET['error']))
 
                             <?php 
     if (isset($_SESSION['id']) && $_SESSION['id']==0) { //$_SESSION['admin']
-        
+            
             echo '<tbody>';
-            foreach ($mysqli->query("SELECT CODEPRIX, AGEMINPRIX, AGEMAXPRIX, PRIX FROM PRIX ") as $row) {$x=0;
+            foreach ($results=$mysqli->query("SELECT CODEPRIX, AGEMINPRIX, AGEMAXPRIX, PRIX FROM PRIX ") as $row) {$x=0;$num_rows = $results->num_rows;
                 echo '<tr>';
                 foreach($row as $clmn){
                     echo'<td><center><input min="1" name="modif'.$x.'[]" style="text-align:center" type="text" value="'.$clmn.'"';
@@ -65,6 +66,7 @@ if (isset($_GET['error']))
     <div class="row">
         <center><input type="submit" class="btn btn-default btn-success " value="Confirmer modifications">
         <a id="add_rowP" class="btn btn-default btn-primary ">Ajouter un champ</a><a id='delete_row' style="margin-left:15px;margin-right:15px;" class="btn-warning btn btn-default">Supprimer un champ</a>
+            <input type="hidden" name="cl" value="<?=$num_rows?>">
         </center>
     </div>
 </div>

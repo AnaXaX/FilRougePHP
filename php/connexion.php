@@ -163,6 +163,7 @@ if (isset($_POST['priceEntree'])) {
         $ageMinPrix = $_POST['modif1'];
         $ageMaxPrix = $_POST['modif2'];
         $prix = $_POST['modif3'];
+        $numRowsUpd=$_POST['cl'];
         $donneesvalides = false;
         for ($i = 0; $i < count($codePrix); $i++) {
             if (!empty($codePrix[$i]) && !empty($ageMinPrix[$i]) && !empty($ageMaxPrix[$i]) && !empty($prix[$i])) 
@@ -171,54 +172,35 @@ if (isset($_POST['priceEntree'])) {
                 echo "<script>location='../adminPrice.php?error=1'</script>";
             
         }
-             $reservationInseree = false;   
             if ($donneesvalides) {
-                for ($i = 0; $i < count($codePrix); $i++) {
+                for ($i = 0; $i <$numRowsUpd; $i++) {
                   if ($mysqli) {
                     $qry = 'UPDATE PRIX SET CODEPRIX='.$codePrix[$i].',AGEMINPRIX='.$ageMinPrix[$i].', AGEMAXPRIX='.$ageMaxPrix[$i].', PRIX='.$prix[$i].' where CODEPRIX='.$codePrix[$i];
                     if ($mysqli->query($qry) === FALSE) {
                         //Erreur lors de la création
                         echo "<script>location='../adminPrice.php?error=2'</script>";
                         exit;
-                    }else
-                        echo "<script>location='../adminPrice.php?reussi=2'</script>";         
+                    } 
                 }                 
 
             }
+   
+       if(isset($numRowsUpd)){
+                $qry = "INSERT INTO PRIX (CODEPRIX, AGEMINPRIX, AGEMAXPRIX, PRIX) VALUES (";
+             for ($i = $numRowsUpd; $i < count($codePrix); $i++) {
+                                $qry = $qry."'$codePrix[$i]',";
+                                $qry = $qry."'$ageMinPrix[$i]',";
+                                $qry = $qry."'$ageMaxPrix[$i]',";
+                                $qry = $qry."'$prix[$i]')";
+                     
+                                if ($mysqli->query($qry) === FALSE){
+                                    echo "<script>location='../adminPrice.php?error=3'</script>";
+                                
+                                }else
+                                    echo "<script>location='../adminPrice.php?reussi=2'</script>"; 
+                    }
+                }
+            }
         }
-    }
 }
-
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
