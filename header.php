@@ -68,6 +68,7 @@ include('php/hostix.php'); ?>
                         <ul class="dropdown-menu">
                             <li ><a href="formModifInfoClient.php">Modifier mes données personnelles</a></li>
                             <li><a href="panier.php">Consulter mon panier</a></li>
+                            <li><a href="mesReservations.php">Mes reservations</a></li>
                             <li><a href="php/connexion.php?stateCo=lhayat">Se déconnecter</a></li>
                         </ul>
                     </li>';}?>
