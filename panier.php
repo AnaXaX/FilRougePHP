@@ -31,7 +31,6 @@ require_once 'php/Helper.php';
                         <?php if (isset($_SESSION['id'])): ?>
                         <tbody>
                             <?php 
-                      $totalAPayer=0;
                       $reservation = array();
                       $r = $panier[0];
                       $i=0;
@@ -47,6 +46,7 @@ require_once 'php/Helper.php';
 
                             <?php foreach($reservation as $res): ?>
                             <?php $prixE=0;?>
+                            <form method="post" action="php/connexion.php">
                             <tr>
                                 <td data-th="Product">
                                     <div class="row">
@@ -56,9 +56,14 @@ require_once 'php/Helper.php';
                                                     <?php foreach($res as $r): ?>
                                                     Visite au <?= date('d/m/Y',strtotime(str_replace('-','/', $r['DATEENTREE'])))?> par 
                                                         <?= $r['NOMVISITEUR']?>,
-                                                            <?= $r['AGEVISITEUR'].' Ans'?>
-                                                                <?php $prixE+=$r['prixEV']; $totalAPayer+=$prixE; ?>
-                                                                <br>
+                                                            <?= $r['AGEVISITEUR'].' Ans : <b>'.$r['prixEV'].' €</b>'?>
+                                                                <?php $prixE+=$r['prixEV'];                                  
+                                                                    if(isset($r['prixA'])){
+                                                                        echo'<br><div class="alert alert-success" role="alert">          Activité "'.$r['LIBELLEACTIVITE'].'" incluse : <b>'.$r['prixA'].' €</b> </div>';
+                                                                        $prixE+=$r['prixA'];
+                                                                        } else{ echo '<br>';}
+                                                                ?>
+                                                                
                                                                 <?php endforeach; ?>
                                                 </p>
                                         </div>
@@ -66,23 +71,30 @@ require_once 'php/Helper.php';
                                 </td>
 
                                 <td data-th="Price">
-                                    <?= $prixE.' €'?>
+                                    <?= '<b>'.$prixE.' €</b>'?>
                                 </td>
                                 <td class="actions" data-th="">
-                                    <button class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+                                    <button type="submit" class="btn btn-danger btn-sm" name="bSup" ><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button><input type='hidden' value="<?=$r['CODERESERVATION']?>" name="cr">
                                 </td>
                             </tr>
-                            <?php endforeach; ?>
+                            </form>
+                                <?php endforeach; ?>
                         </tbody>
-                        
+                        <?php 
+                        if ($mysqli){
+                            $totalAPayer=0;
+                            foreach ($mysqli->query("CALL calculPrix(".$_SESSION['id'].")") as $row)
+                                $totalAPayer+=$row['prixTotal'];
+                        }
+                        ?>
                         <tfoot>
                             <tr class="visible-xs">
-                                <td class="text-center"><strong><?=$totalAPayer?></strong></td>
+                                <td class="text-center"><strong>Total <?=$totalAPayer.'€'?></strong></td>
                             </tr>
                             <tr>
                                 <td><a href="index.php" class="btn btn-warning"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Continuer la visite</a></td>
                                 <td colspan="2" class="hidden-xs"></td>
-                                <td class="hidden-xs text-center"><strong>Total <?=$totalAPayer.' €'?></strong></td>
+                                <td class="hidden-xs text-center"><strong>Total <?=$totalAPayer.'€'?></strong></td>
                                 <td><a href="validationAchat.php" class="btn btn-success btn-block">Payement <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a></td>
                             </tr>
                         </tfoot>

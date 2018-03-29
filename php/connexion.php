@@ -53,8 +53,8 @@ if (isset($_GET['modif'])) {
 
 // Gestion entree classiques
 if (isset($_SESSION['id'])) {
-
-    if (isset($_POST['nat']) && isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['age']) && isset($_POST['DateEntree'])) {
+    if (isset($_POST['nat'])){
+    if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['age']) && isset($_POST['DateEntree'])) {
 
         $nom = $_POST['nom'];
         $prenom = $_POST['prenom'];
@@ -64,9 +64,9 @@ if (isset($_SESSION['id'])) {
         for ($i = 0; $i < count($nom); $i++) {
             if (!empty($nom[$i]) && !empty($prenom[$i]) && !empty($age[$i]) && !empty($DateEntree[$i])) {
                 $donneesvalides = true;
-            } else {
+            } else 
                 echo "<script>location='../FormEntreeClassique.php?err=1'</script>";
-            }
+            
         }
         if ($donneesvalides) {
             $reservationInseree = false;
@@ -135,6 +135,56 @@ if (isset($_SESSION['id'])) {
         }
     } else 
         echo "<script>location='../FormEntreeClassique.php?err=1'</script>";  
+    }
+    
+//Supression de reservation
+    
+    if (isset($_POST['cr'])){
+        if ($mysqli){
+            
+            $qry='Delete from RESERVATION where CODERESERVATION='.$_POST['cr'];
+            if ($mysqli->query($qry) === TRUE) {
+                echo "<script>location='../panier.php'</script>";  
+                                }
+            
+        }
+        
+    }
+    
+    
 } else 
     echo "<script>location='../FormEntreeClassique.php?err=0'</script>";
+
 ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
