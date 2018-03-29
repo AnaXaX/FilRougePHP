@@ -24,7 +24,7 @@ require_once 'php/Helper.php';
                     <div class="form-group">
                         <label for="inputAdresse">Code promo</label>
                         <input type="text" class="form-control" id="codePromo" placeholder="Code promo" name="codePromo">
-                        <input type='hidden' value="<?= $_POST['cr'] ?>" name="cr">
+                        <input type='hidden' value="<?= $_GET['cr'] ?>" name="cr">
                     </div>
 
                     <center>

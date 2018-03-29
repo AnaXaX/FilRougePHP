@@ -9,7 +9,7 @@ if ($mysqli) {
         $preduction = $row["POURCENTAGEPROMO"];
     
     $totalAPayer = 0;
-    foreach ($mysqli->query("CALL calculPrix(" . $_SESSION['id'] . ") ") as $row)
+    foreach ($mysqli->query("CALL calculPrixResa(" . $_POST['cr'] . ") ") as $row)
         $totalAPayer += $row['prixTotal'];
 }
 ?>
@@ -45,7 +45,7 @@ if ($mysqli) {
                         ?>
                     </div>
                     <input type="hidden" name="codePromo" value="<?php echo $_POST["codePromo"]; ?>">
-                    <input type='hidden' value="<?= $_POST['cr'] ?>" name="creduc">
+                    <input type='hidden' value="<?= $_POST['cr'] ?>" name="cresa">
                     <div class="form-group">
                         <label for="inputVille">Moyen de paiement</label>
                         <input type="text" class="form-control" id="MP" placeholder="Moyen de paiement" name="MP" value="PAYPAL">
@@ -56,7 +56,7 @@ if ($mysqli) {
                     </div>
 
                     <center>
-                        <button type="submit" class="btn btn-default">Enregistrer</button>
+                        <button type="submit" class="btn btn-default">Payer</button>
 
                     </center>
                 </fieldset>

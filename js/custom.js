@@ -77,7 +77,9 @@ $(function () {
 /*Modification traitement input date*/
 
     $("#datetimepicker input").datepicker({
-         format: "yyyy-mm-dd",       
+         format: "yyyy-mm-dd",     
+         startDate: new Date(),
+          todayBtn: true,
 });
 
 /*Entrée Visiteur add rows*/

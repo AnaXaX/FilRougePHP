@@ -28,7 +28,7 @@ require_once 'php/Helper.php';
                             </tr>
                         </thead>
 
-                        <?php if (isset($_SESSION['id'])): ?>
+                        <?php if (isset($_SESSION['id'],$panier[0])): ?>
                         <tbody>
                             <?php 
                       $reservation = array();
@@ -75,6 +75,7 @@ require_once 'php/Helper.php';
                                 </td>
                                 <td class="actions" data-th="">
                                     <button type="submit" class="btn btn-danger btn-sm" name="bSup" ><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button><input type='hidden' value="<?=$r['CODERESERVATION']?>" name="cr">
+                                    <button type="submit" class="btn btn-success btn-sm" name="bAch" value="Payer">Payer</button>
                                 </td>
                             </tr>
                             </form>
@@ -89,14 +90,18 @@ require_once 'php/Helper.php';
                         ?>
                         <tfoot>
                             <tr class="visible-xs">
-                                <td class="text-center"><strong>Total <?=$totalAPayer.'€'?></strong></td>
-                            </tr>
-                            <tr>
+                                <td><strong>Total <?=$totalAPayer.'€'?></strong></td>
+                            
                                 <td><a href="index.php" class="btn btn-warning"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Continuer la visite</a></td>
                                 <td colspan="2" class="hidden-xs"></td>
                                 <td class="hidden-xs text-center"><strong>Total <?=$totalAPayer.'€'?></strong></td>
                                 
-                                <td><form method="POST" action="validationAchatCP.php" ><input type='hidden' value="<?=$r['CODERESERVATION']?>" name="cr"><input type="submit" value="Payer" class="btn btn-success btn-block"></a></form></td>
+                                <td>
+                                    <form method="POST" action="validationAchatCP.php" >
+                                        <input type='hidden' value="<?=$r['CODERESERVATION']?>" name="cr">
+                                        <!--input type="submit" value="Payer" class="btn btn-success btn-block"-->
+                                    </form>                                
+                                </td>
                             </tr>
                         </tfoot>
                         <?php endif; ?>

@@ -136,7 +136,8 @@ if (isset($_SESSION['id'])) {
     }
 
 //Supression de reservation
-    if (isset($_POST['cr'])) {
+    if(isset($_POST['bSup'],$_POST['cr'])){
+
         if ($mysqli) {
             $qry = 'Delete from RESERVATION where CODERESERVATION=' . $_POST['cr'];
             if ($mysqli->query($qry) === TRUE)
@@ -145,11 +146,15 @@ if (isset($_SESSION['id'])) {
     }
 } else
     echo "<script>location='../FormEntreeClassique.php?err=0'</script>";
+    
+if(isset($_POST['bAch'],$_POST['cr'])){
+    echo "<script>location='../validationAchatCP.php?cr=".$_POST['cr']."'</script>";
+}
+
 
 
 //VALIDATION RESERVATION
 if (isset($_POST['MP'])) {
-    if ($mysqli) {
         $idReduction = 1;
         foreach ($mysqli->query("Select * from REDUCTION where CODEPROMO='" . $_POST["codePromo"] . "';") as $row) {
             $preduction = $row["POURCENTAGEPROMO"];
@@ -157,21 +162,26 @@ if (isset($_POST['MP'])) {
         }
 
         $totalAPayer = 0;
-        foreach ($mysqli->query("CALL calculPrix(" . $_SESSION['id'] . ") ") as $row)
+        foreach ($mysqli->query("CALL calculPrixResa(" . $_POST['cresa'] . ") ;") as $row)
             $totalAPayer += $row['prixTotal'];
-
+       // mysqli_free_result();
+        mysqli_next_result($mysqli);
         $reduction = $totalAPayer * $preduction;
         $totalAPayer = $totalAPayer - $reduction;
         $now = date('Y-m-d H:i:s');
-        $qry = "update RESERVATION set CODEREDUC=" . $idReduction . ", MOYENPAYEMENT ='" . $_POST["MP"] . "',DATEOPERATION='" . $now . "', TOTALPAYE=" . $totalAPayer . " Where ";
-        $qry = $qry . "CODERESERVATION =" . $_POST["creduc"];
-        echo $qry;
-        if ($mysqli->query($qry) === TRUE){
+     if ($mysqli) {
+        $qry = "UPDATE RESERVATION SET CODEREDUC=" . $idReduction . ", MOYENPAYEMENT ='" . $_POST["MP"] . "',DATEOPERATION='" . $now . "', TOTALPAYE=" . $totalAPayer . " Where CODERESERVATION =" . $_POST['cresa']."; ";
+        //mysqli_query($mysqli,$qry);
+        //echo $qry;
+        $qry = "CALL updateResa(" . $idReduction . ",'" . $_POST["MP"] . "','" . $now . "', " . $totalAPayer . "," . $_POST['cresa']."); ";
+         //echo $qry;
+        if ($mysqli){
+         if ($mysqli->query($qry) === TRUE)
             echo "<script>location='../mesReservations.php'</script>";
-        }
-
-        
+        } 
+         
     }
+    
 }
 
 /* Début suppresion compte */
