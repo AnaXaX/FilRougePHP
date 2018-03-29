@@ -63,7 +63,7 @@ include 'php/Helper.php';
                                             <input type="text" name='prenom[]' placeholder='Prenom' class="form-control" />
                                         </td>
                                         <td>
-                                            <input type="number" name='age[]' placeholder='Age' class="form-control" />
+                                            <input type="number" name='age[]' min="1" max="99" placeholder='Age' class="form-control" />
                                         </td>
                                         <td>
                                             <div class='input-group date' id="datetimepicker">

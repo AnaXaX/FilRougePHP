@@ -6,7 +6,7 @@ $prix = array();
         <div class="jumbotron MinOpacity">
             <center>
                 <h2><b><?php if (isset($_SESSION['email']))
-                                echo $_SESSION['nomClient'].' '. $_SESSION['prenomClient'] ;?>, ici vous aller pouvoir changer les prix des Entrées classiques </b></h2>
+                                echo $_SESSION['nomClient'].' '. $_SESSION['prenomClient'].',' ;?> ici vous aller pouvoir changer les prix des Entrées classiques </b></h2>
             </center>
         </div>
     </div>
@@ -49,7 +49,7 @@ $prix = array();
                 echo '</tr>';
             } 
         }
-    }
+    
 ?>
 </table>
 <div class="container">

@@ -7,10 +7,11 @@ require_once 'header.php';
     echo'animated bounce';
 if (isset($_GET['error']))
     echo'animated shake';
-?>">
+?>"><center>
         <h1><b> BIENVENUE AU ZOO PARK </b></h1>
         <p><i> Plongez au coeur du monde animal</i></p>
         <p><a class="btn btn-primary btn-large">En savoir plus </a></p>
+        </center>
     </div>
     <div class="row">
         <div class="col-lg-6">

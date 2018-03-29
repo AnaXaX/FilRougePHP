@@ -138,23 +138,25 @@ if (isset($_SESSION['id'])) {
     }
     
 //Supression de reservation
-    
     if (isset($_POST['cr'])){
         if ($mysqli){
-            
             $qry='Delete from RESERVATION where CODERESERVATION='.$_POST['cr'];
-            if ($mysqli->query($qry) === TRUE) {
+            if ($mysqli->query($qry) === TRUE) 
                 echo "<script>location='../panier.php'</script>";  
-                                }
-            
-        }
-        
-    }
-    
-    
+        }    
+    }    
 } else 
     echo "<script>location='../FormEntreeClassique.php?err=0'</script>";
 
+
+/* Début suppresion compte */
+if (isset($_GET['supp'])) {
+       if ($mysqli){
+        $qry='Delete from Client where codeClient='.$_SESSION['id'];
+        if ($mysqli->query($qry) === TRUE) 
+            echo "<script>location='connexion.php?stateCo=lhayat'</script>";  
+    }
+}
 ?>
 
 

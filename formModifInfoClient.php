@@ -7,8 +7,12 @@ require_once 'php/Helper.php';
     <div class="jumbotron MinOpacity">
         <center>
         <h1><?php
-            echo $clt['nomClient'].' '.$clt['prenomClient'] ?></h1>
-        <p><?php echo $_SESSION['email'] ?></p>
+            if(isset($_SESSION['id']))
+            echo $clt['nomClient'].' '.$clt['prenomClient'].'</h1>
+        <p>'.$_SESSION['email'].'</p>' ?>
+            <form  action="php/connexion.php?supp=lhayat" method="post" role="form">
+                <button type="submit" class="btn btn-danger" value="supression">Supprimer le compte</button>
+            </form>
         </center>
     </div>
     <div class="panel panel-default MinOpacity <?php if(isset($_GET['reussi']))echo'animated bounce'; if(isset($_GET['error']))echo'animated shake'; ?>" id="forms">
@@ -17,7 +21,7 @@ require_once 'php/Helper.php';
         <div class="panel-body">
             <form action="php/connexion.php?modif=lhayat" method="post" role="form"> 
                 <fieldset>
-                    <legend>Modifiez vous données personnelles</legend>
+                    <legend>Modifiez vos données personnelles</legend>
                     <label for="inputDateDeNaissance">Date de naissance</label>
                     <div class='input-group date' id='datetimepicker'>
                         <input type='text' class="form-control" placeholder="AAAA/MM/JJ" id="DateDeNaissance" name="dateDeNaissanceMod" value="<?php if (!empty($clt['dateNaissanceClient'])){ echo $clt['dateNaissanceClient'];}?>" readonly><!-- Change value by php code -->
@@ -45,6 +49,7 @@ require_once 'php/Helper.php';
                     <center>
                     <button type="submit" class="btn btn-default">Enregistrer</button>
                     <button type="reset" class="btn btn-primary">Rénisialiser</button>
+
                     </center>
                 </fieldset>
             </form>
