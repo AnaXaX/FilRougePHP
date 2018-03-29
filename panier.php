@@ -95,7 +95,8 @@ require_once 'php/Helper.php';
                                 <td><a href="index.php" class="btn btn-warning"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Continuer la visite</a></td>
                                 <td colspan="2" class="hidden-xs"></td>
                                 <td class="hidden-xs text-center"><strong>Total <?=$totalAPayer.'€'?></strong></td>
-                                <td><a href="validationAchat.php" class="btn btn-success btn-block">Payement <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a></td>
+                                
+                                <td><form method="POST" action="validationAchatCP.php" ><input type='hidden' value="<?=$r['CODERESERVATION']?>" name="cr"><input type="submit" value="Payer" class="btn btn-success btn-block"></a></form></td>
                             </tr>
                         </tfoot>
                         <?php endif; ?>
