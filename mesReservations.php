@@ -28,7 +28,7 @@ require_once 'php/Helper.php';
                         </tr>
                     </thead>
 
-                    <?php if (isset($_SESSION['id'])): ?>
+                    <?php if (isset($_SESSION['id'],$reservations[0])): ?>
                         <tbody>
                             <?php
                             $reservation = array();
