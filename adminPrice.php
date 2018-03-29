@@ -39,7 +39,7 @@ $prix = array();
 
                             <?php 
     if (isset($_SESSION['id']) && $_SESSION['id']==0) { //$_SESSION['admin']
-        if ($mysqli) {
+        
             echo '<tbody>';
             foreach ($mysqli->query("SELECT CODEPRIX, AGEMINPRIX, AGEMAXPRIX, PRIX FROM PRIX WHERE ACTIVITE=0 ") as $row) {
                 echo '<tr>';

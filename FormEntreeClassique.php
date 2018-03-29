@@ -17,8 +17,7 @@ include 'php/Helper.php';
     </div>
     <div class="container">
         <div class="panel panel-default MinOpacity">
-            <div class="panel-heading">Entrée Visiteur
-            </div>
+            <div class="panel-heading">Entrée Visiteur</div>
             <div class=" panel-body row clearfix">
                 <div class="col-md-12 column">
                     <?php

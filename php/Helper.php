@@ -9,7 +9,7 @@ if (!isset($_SESSION))
     $clt = array();
     if (isset($_SESSION['id'])) {
         if ($mysqli) {
-            foreach ($mysqli->query("SELECT * FROM Client WHERE codeClient=" . $_SESSION['id']) as $row) {
+            foreach ($mysqli->query("SELECT * FROM Client WHERE codeClient=".$_SESSION['id']) as $row) {
                 $clt=$row;
             }
         }
@@ -19,7 +19,12 @@ if (!isset($_SESSION))
     
     if (isset($_SESSION['id'])) {
         if ($mysqli) {
-            foreach ($mysqli->query("SELECT * FROM RESERVATION WHERE CODECLIENT=" . $_SESSION['id']." and TOTALPAYE is NULL") as $row) {
+            foreach ($mysqli->query("SELECT r.CODERESERVATION,ev.CODEENTREEVISITEUR, ev.CODEPRIX, ev.NOMVISITEUR, ev.AGEVISITEUR,a.LIBELLEACTIVITE,(Select px.PRIX FROM PRIX px WHERE px.CODEPRIX=ev.CODEPRIX ) as prixEV, (Select px.PRIX FROM PRIX px WHERE px.CODEPRIX=a.CODEPRIX ) as prixA, ev.DATEENTREE
+            FROM RESERVATION r
+            RIGHT JOIN ENTREEVISITEUR ev on ev.CODERESERVATION = r.CODERESERVATION
+            LEFT JOIN  BRACELET b on b.CODEENTREEVISITEUR=ev.CODEENTREEVISITEUR
+            LEFT JOIN  ACTIVITE a on a.CODEACTIVITE=b.CODEACTIVITE
+            where r.CODECLIENT=".$_SESSION['id']." and r.TOTALPAYE is NULL") as $row) {
                 $panier[]=$row;
             }
         }
