@@ -87,7 +87,9 @@ $(function () {
       $('#addr'+i).html("<td>"+ (i+1) +"</td><td><input name='nom[]' type='text' placeholder='Nom' class='form-control input-md' /></td><td><input name='prenom[]' type='text' placeholder='Prenom' class='form-control input-md'></td><td><input name='age[]' type='number' placeholder='Age' class='form-control input-md'></td><td><div class='input-group date' id='datetimepicker"+i+"'><input type='text' class='form-control' placeholder='Date de visite' class='DateEntree' name='DateEntree[]' readonly><span class='input-group-addon'><span class='glyphicon glyphicon-calendar'></span></span></div></td>");
          
       $("#datetimepicker"+i+" input").datepicker({
-         format: "yyyy-mm-dd",       
+         format: "yyyy-mm-dd",
+          startDate: new Date(),
+          todayBtn: true,
         });
          
       $('#tab_logic').append('<tr id="addr'+(i+1)+'"></tr>');
@@ -102,3 +104,50 @@ $(function () {
      });
     });
 /*End Add Row*/
+
+$(function () {
+      var i=1;
+     $("#add_rowA").click(function(){
+      $('#addr'+i).html("<td><input  name='CODEACTIVITE[]' style='text-align:center' type='text'></td><td><input  name='CODEPRIX[]' style='text-align:center' type='text' ></td><td><input  name='LIBELLEACTIVITE[]' style='text-align:center' type='text' ></td><td><div class='input-group date'id='datetimepicker"+i+"'><input  name='DATEDEBUTACTIVITE[]' style='text-align:center' type='text' ></div></td><td><div class='input-group date'id='datetimepicker"+i+"'><input  name='DATEFINACTIVITE[]' style='text-align:center' type='text' ></div></td><td><input  name='AGEMINACTIVITE[]' style='text-align:center' type='text' ></td><td><input  name='ACCES[]' style='text-align:center' type='text' ></td>");
+         
+      $("#datetimepicker"+i+" input").datepicker({
+         format: "yyyy-mm-dd",
+          startDate: new Date(),
+          todayBtn: true,
+        });
+         
+      $('#tab_logic').append('<tr id="addr'+(i+1)+'"></tr>');
+      i++;
+      });
+    
+     $("#delete_row").click(function(){
+         if(i>1){
+         $("#addr"+(i-1)).html('');
+         i--;
+         }
+     });
+    });
+
+$(function () {
+    var p=0;
+      var i=1;
+     $("#add_rowP").click(function(){p=0;
+      $('#addr'+i).html("<td><center><input min='1' name='modif"+p+++"[]' style='text-align:center' type='text'></center></td><td><center><input min='1' name='modif"+p+++"[]' style='text-align:center' type='text'></center></td><td><center><input min='1' name='modif"+p+++"[]' style='text-align:center' type='text'></center></td><td><center><input min='1' name='modif"+p+++"[]' style='text-align:center' type='text'></center></td> ");
+       
+         $("#datetimepicker"+i+" input").datepicker({
+         format: "yyyy-mm-dd",
+          startDate: new Date(),
+          todayBtn: true,
+        });
+         
+      $('#tab_logic').append('<tr id="addr'+(i+1)+'"></tr>');
+      i++;
+      });
+    
+     $("#delete_row").click(function(){
+         if(i>1){
+         $("#addr"+(i-1)).html('');
+         i--;
+         }
+     });
+        });

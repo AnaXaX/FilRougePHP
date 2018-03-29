@@ -157,6 +157,38 @@ if (isset($_GET['supp'])) {
             echo "<script>location='connexion.php?stateCo=lhayat'</script>";  
     }
 }
+if (isset($_POST['priceEntree'])) {
+        if (isset($_POST['modif0'], $_POST['modif1'], $_POST['modif2'], $_POST['modif3'])) {
+        $codePrix = $_POST['modif0'];
+        $ageMinPrix = $_POST['modif1'];
+        $ageMaxPrix = $_POST['modif2'];
+        $prix = $_POST['modif3'];
+        $donneesvalides = false;
+        for ($i = 0; $i < count($codePrix); $i++) {
+            if (!empty($codePrix[$i]) && !empty($ageMinPrix[$i]) && !empty($ageMaxPrix[$i]) && !empty($prix[$i])) 
+                $donneesvalides = true;
+             else 
+                echo "<script>location='../adminPrice.php?error=1'</script>";
+            
+        }
+             $reservationInseree = false;   
+            if ($donneesvalides) {
+                for ($i = 0; $i < count($codePrix); $i++) {
+                  if ($mysqli) {
+                    $qry = 'UPDATE PRIX SET CODEPRIX='.$codePrix[$i].',AGEMINPRIX='.$ageMinPrix[$i].', AGEMAXPRIX='.$ageMaxPrix[$i].', PRIX='.$prix[$i].' where CODEPRIX='.$codePrix[$i];
+                    if ($mysqli->query($qry) === FALSE) {
+                        //Erreur lors de la création
+                        echo "<script>location='../adminPrice.php?error=2'</script>";
+                        exit;
+                    }else
+                        echo "<script>location='../adminPrice.php?reussi=2'</script>";         
+                }                 
+
+            }
+        }
+    }
+}
+
 ?>
 
 

@@ -11,9 +11,13 @@ $prix = array();
         </div>
     </div>
 
-    <div class="container ">
+    <div class="container <?php if (isset($_GET['reussi']))
+    echo'animated bounce';
+if (isset($_GET['error']))
+    echo'animated shake';
+?>">
         <div class="panel panel-default MinOpacity">
-            <div class="panel-heading">Gestions prix des Entrées classiques
+            <div class="panel-heading">Gestions Des Prix
             </div>
             <div class=" panel-body row clearfix">
                 <div class="col-md-12 column">
@@ -41,10 +45,15 @@ $prix = array();
     if (isset($_SESSION['id']) && $_SESSION['id']==0) { //$_SESSION['admin']
         
             echo '<tbody>';
-            foreach ($mysqli->query("SELECT CODEPRIX, AGEMINPRIX, AGEMAXPRIX, PRIX FROM PRIX WHERE ACTIVITE=0 ") as $row) {
+            foreach ($mysqli->query("SELECT CODEPRIX, AGEMINPRIX, AGEMAXPRIX, PRIX FROM PRIX ") as $row) {$x=0;
                 echo '<tr>';
                 foreach($row as $clmn){
-                    echo'<td><center><input style="text-align:center" type="text" value="'.$clmn.'"></center> </td>';
+                    echo'<td><center><input min="1" name="modif'.$x.'[]" style="text-align:center" type="text" value="'.$clmn.'"';
+                    if($x==0)
+                     echo 'readonly ></center></td>';
+                    else
+                        echo '></center></td>';
+                    $x++;
                 }
                 echo '</tr>';
             } 
@@ -54,7 +63,9 @@ $prix = array();
 </table>
 <div class="container">
     <div class="row">
-        <center><input type="submit" class="btn btn-default btn-success " value="Confirmer modifications"></center>
+        <center><input type="submit" class="btn btn-default btn-success " value="Confirmer modifications">
+        <a id="add_rowP" class="btn btn-default btn-primary ">Ajouter un champ</a><a id='delete_row' style="margin-left:15px;margin-right:15px;" class="btn-warning btn btn-default">Supprimer un champ</a>
+        </center>
     </div>
 </div>
                     </form>
