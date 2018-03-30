@@ -4,8 +4,12 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/Applications/MAMP/htdocs/FilRougePHP/php/connexion.php</file>
+            <file>file:/Applications/MAMP/htdocs/FilRougePHP/panier.php</file>
             <file>file:/Applications/MAMP/htdocs/FilRougePHP/index.php</file>
-            <file>file:/Applications/MAMP/htdocs/FilRougePHP/php/hostix.php</file>
+            <file>file:/Applications/MAMP/htdocs/FilRougePHP/validationAchat.php</file>
+            <file>file:/Applications/MAMP/htdocs/FilRougePHP/FormEntreeClassique.php</file>
+            <file>file:/Applications/MAMP/htdocs/FilRougePHP/validationAchatCP.php</file>
+            <file>file:/Applications/MAMP/htdocs/FilRougePHP/formModifInfoClient.php</file>
             <file>file:/Applications/MAMP/htdocs/FilRougePHP/header.php</file>
         </group>
     </open-files>

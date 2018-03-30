@@ -42,4 +42,10 @@ if (isset($_SESSION['id'])) {
         }
     }
 }
+
+if ($mysqli) {
+    foreach ($mysqli->query("Select *,DATEDIFF(CURRENT_DATE,DATEFINACTIVITE)as DIFF, PRIX.PRIX As PRIX,DATE_FORMAT(DATEDEBUTACTIVITE, '%d/%m/%Y') as Du,DATE_FORMAT(DATEFINACTIVITE, '%d/%m/%Y') as Au from ACTIVITE inner join PRIX on ACTIVITE.CODEPRIX=PRIX.CODEPRIX order by DATEFINACTIVITE desc") as $row) {
+        $activites[] = $row;
+    }
+}
 ?>
