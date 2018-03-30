@@ -8,6 +8,7 @@ $page = 2;
     <div class="jumbotron MinOpacity">
         <center><h2><b> Découvrez nos offres ! </b></h2>
             <p><i> Entrées classiques à 10 euros, 5 euros pour les mineurs (-18 ans) </i></p>
+            <p><i><h5> * Un ticket d'entrée au parc est requis pour chaque ticket d'activité</h5> </i></p>
             <p><a class="btn btn-primary btn-large" href="FormEntreeClassique.php">Achetez vos entrées !</a></p>
         </center>
     </div>
@@ -33,7 +34,7 @@ $page = 2;
                 </ul>
                 <div class="panel-footer">
                     <?php if($a["DIFF"]<0): ?>
-                    <a class="btn btn-lg btn-block btn-success" href="#" >Ajouter au panier</a>
+                    <a class="btn btn-lg btn-block btn-success" href="ajoutActivitePanier.php?id=<?= $a["CODEACTIVITE"]; ?>" >Ajouter au panier</a>
                     <?php else:?>
                     <a class="btn btn-lg btn-block btn-default" disabled>Expiré !</a>
                     <?php endif;?>
